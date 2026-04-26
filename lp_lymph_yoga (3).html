@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>オンラインリンパケア・ヨガレッスン | ツネカワトモコ</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+      font-size: 15px;
+      line-height: 1.8;
+      color: #2c2c2a;
+      background: #faf9f7;
+    }
+
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+      background: #ffffff;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      border-bottom: 0.5px solid #e8e6e0;
+    }
+    .hero-catch {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: #888780;
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      color: #2c2c2a;
+    }
+    .hero-sub {
+      font-size: 14px;
+      color: #5f5e5a;
+      line-height: 1.9;
+    }
+
+    /* Section */
+    .section {
+      padding: 2rem 0;
+      border-bottom: 0.5px solid #e8e6e0;
+    }
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      color: #b4b2a9;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-body {
+      font-size: 14px;
+      color: #5f5e5a;
+      line-height: 1.9;
+    }
+    .section-body strong {
+      color: #2c2c2a;
+      font-weight: 500;
+    }
+
+    /* Checklist */
+    .check-list {
+      list-style: none;
+    }
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: #5f5e5a;
+      padding: 8px 0;
+      border-bottom: 0.5px solid #f1efe8;
+      line-height: 1.7;
+    }
+    .check-list li:last-child { border-bottom: none; }
+    .check-icon {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      border-radius: 50%;
+      background: #eaf3de;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .check-icon svg { width: 10px; height: 10px; }
+
+    /* Voice cards */
+    .voice-card {
+      background: #f7f6f3;
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-bottom: 10px;
+    }
+    .voice-text {
+      font-size: 14px;
+      line-height: 1.85;
+      color: #2c2c2a;
+      font-style: italic;
+    }
+    .voice-name {
+      font-size: 12px;
+      color: #888780;
+      margin-top: 8px;
+    }
+
+    /* Feature grid */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    @media (max-width: 480px) {
+      .feature-grid { grid-template-columns: 1fr; }
+    }
+    .feature-item {
+      background: #f7f6f3;
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 13px;
+      color: #5f5e5a;
+      line-height: 1.6;
+    }
+    .feature-item strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: #2c2c2a;
+      margin-bottom: 3px;
+    }
+
+    /* Price card */
+    .price-card {
+      background: #ffffff;
+      border: 0.5px solid #d3d1c7;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+    .price-main {
+      font-size: 30px;
+      font-weight: 500;
+      color: #2c2c2a;
+    }
+    .price-sub {
+      font-size: 13px;
+      color: #888780;
+      margin-top: 4px;
+    }
+    .price-notes {
+      font-size: 13px;
+      color: #888780;
+      margin-top: 14px;
+      line-height: 1.9;
+    }
+
+    /* Steps */
+    .step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 12px 0;
+      border-bottom: 0.5px solid #f1efe8;
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      width: 26px;
+      height: 26px;
+      min-width: 26px;
+      border-radius: 50%;
+      background: #f1efe8;
+      border: 0.5px solid #d3d1c7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 500;
+      color: #5f5e5a;
+      margin-top: 1px;
+    }
+    .step-body {
+      font-size: 14px;
+      color: #5f5e5a;
+      line-height: 1.75;
+    }
+    .step-body strong {
+      display: block;
+      font-weight: 500;
+      color: #2c2c2a;
+      margin-bottom: 2px;
+    }
+
+    /* Video */
+    .video-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #f1efe8;
+    }
+    .video-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+      border-radius: 12px;
+    }
+    .video-caption {
+      font-size: 13px;
+      color: #888780;
+      margin-top: 10px;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    /* CTA */
+    .cta-area {
+      text-align: center;
+      padding: 2.5rem 0 1rem;
+    }
+    .cta-lead {
+      font-size: 14px;
+      color: #5f5e5a;
+      margin-bottom: 16px;
+    }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #06C755;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+    }
+    .cta-btn svg { width: 22px; height: 22px; flex-shrink: 0; }
+    .cta-note {
+      font-size: 12px;
+      color: #b4b2a9;
+      margin-top: 14px;
+      line-height: 1.9;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 2rem 0 1rem;
+      font-size: 12px;
+      color: #b4b2a9;
+      border-top: 0.5px solid #e8e6e0;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <div class="hero-catch">オンラインリンパケア・ヨガレッスン</div>
+    <h1>「あれ、私なんかいい感じ！」<br>毎日たった3分から、<br>体も心もご機嫌に。</h1>
+    <p class="hero-sub">きつい運動なし。パジャマのままでOK。<br>自分のペースで、無理なく続けられるセルフケアのレッスンです。</p>
+  </div>
+
+  <div class="section">
+    <div class="section-label">こんな方へ</div>
+    <ul class="check-list">
+      <li>
+        <span class="check-icon"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7.5 8,3" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        疲れが抜けにくく、体がだる重く感じる
+      </li>
+      <li>
+        <span class="check-icon"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7.5 8,3" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        体型が気になるけど、きつい運動は続かない
+      </li>
+      <li>
+        <span class="check-icon"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7.5 8,3" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        むくみや肩こり、首のこりが慢性的にある
+      </li>
+      <li>
+        <span class="check-icon"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7.5 8,3" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        更年期やホルモンの変化で、なんとなく不調
+      </li>
+      <li>
+        <span class="check-icon"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7.5 8,3" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        薬に頼らず、自分でできるケアを探している
+      </li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-label">レッスンの特徴</div>
+    <p class="section-body">
+      このレッスンでお伝えするのは、<strong>「特別な時間をつくらなくていい」セルフケア</strong>です。<br><br>
+      立ち方・座り方・家事のちょっとした動き方を変えるだけで、リンパが自然と流れやすくなります。「日傘の持ち方を変えるだけでヒップがスッキリ」「お皿の洗い方を変えるだけで肩が楽に」——そんな、毎日の暮らしに溶け込む知恵をお届けしています。
+    </p>
+  </div>
+
+  <div class="section">
+    <div class="section-label">受講された方の声</div>
+    <div class="voice-card">
+      <div class="voice-text">「続けていたら、ウエストがマイナス8センチに！鏡を見るのが楽しみになりました。」</div>
+      <div class="voice-name">40代 女性</div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-text">「パジャマのままスマホ一つで参加できるので、ずっと続けられています。プロに施術してもらっているような気持ちよさです。」</div>
+      <div class="voice-name">50代 女性</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">レッスン内容</div>
+    <div class="feature-grid">
+      <div class="feature-item"><strong>ライブ配信</strong>毎週日曜10時・30分（アーカイブあり）</div>
+      <div class="feature-item"><strong>動画見放題</strong>過去250本以上をいつでも視聴</div>
+      <div class="feature-item"><strong>リンパヨガ</strong>簡単で効果が出やすい動きを厳選</div>
+      <div class="feature-item"><strong>対面レッスン割引</strong>グループ・個別レッスンも優待価格で</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">レッスン動画サンプル</div>
+    <div style="background:#f7f6f3; border-radius:12px; padding:24px; text-align:center;">
+      <p style="font-size:14px; color:#5f5e5a; line-height:1.8; margin-bottom:16px;">「楽して愉しい掃除機のかけ方」<br>日常の動作がそのままセルフケアになります。</p>
+      <a href="https://youtu.be/W5r9egeatR0?si=pf0ekWGc4iIAFaeJ" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#ff0000;color:#fff;font-size:14px;font-weight:500;padding:12px 24px;border-radius:8px;text-decoration:none;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+        YouTubeで見る
+      </a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">料金</div>
+    <div class="price-card">
+      <div class="price-main">月々 3,300円</div>
+      <div class="price-sub">税込 / 入会金なし</div>
+      <div class="price-notes">
+        1ヶ月だけの参加もOKです。<br>
+        いつ入会しても、その月から全コンテンツをお楽しみいただけます。<br>
+        退会はいつでも可能。PayPay・振込にも対応しています。
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">はじめ方</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body"><strong>LINEから問い合わせ・ご予約</strong>気になることはなんでもお気軽にどうぞ</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body"><strong>Facebookに会員登録</strong>グループでご質問やリクエストができます</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body"><strong>PayPal（またはPayPay・振込）でお支払い</strong>月3,300円・翌月から自動更新</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body"><strong>Facebookグループへご招待</strong>すぐにレッスン動画を楽しめます</div>
+    </div>
+  </div>
+
+  <div class="cta-area">
+    <p class="cta-lead">まずはお気軽にLINEでご相談ください。</p>
+    <a href="https://lin.ee/RVQhsbA" class="cta-btn" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.03 2 11c0 3.13 1.68 5.9 4.28 7.6-.18.65-.66 2.37-.76 2.74-.12.45.17.44.36.32.15-.1 2.4-1.58 3.37-2.22.88.13 1.79.2 2.75.2 5.52 0 10-4.03 10-9S17.52 2 12 2z"/></svg>
+      LINEで問い合わせる
+    </a>
+    <div class="cta-note">いつでも退会できます。まずは試してみてください。</div>
+  </div>
+
+  <div class="footer">
+    &copy; ツネカワトモコ オンラインリンパケア・ヨガレッスン
+  </div>
+
+</div>
+</body>
+</html>
